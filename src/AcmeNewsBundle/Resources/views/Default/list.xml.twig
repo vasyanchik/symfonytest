@@ -1,0 +1,8 @@
+<list>
+    {% for entry in news %}
+		<item id="{{ entry.id }}" date="{{ entry.publishedAt|date("m/d/Y") }}">
+			<announce><![CDATA[{{ entry.shorttext }}]]></announce>
+			<description><![CDATA[{{ entry.fulltext }}]]></description>
+		</item>
+	{% endfor %}
+</list>

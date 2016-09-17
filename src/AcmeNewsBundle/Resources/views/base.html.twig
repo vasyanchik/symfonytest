@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}News Application{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    </head>
+    <body>
+        <h1>{% block header %}News Application{% endblock %}</h1>
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

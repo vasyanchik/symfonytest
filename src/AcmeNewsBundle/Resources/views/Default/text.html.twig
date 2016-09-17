@@ -1,0 +1,21 @@
+{% extends 'AcmeNewsBundle::base.html.twig' %}
+
+{% block title %}News Item{% endblock %}
+{% block header %}News Item{% endblock %}
+
+{% block body %}
+	<p>{{ news.fulltext }}</p>
+	<div>Published At: <time datetime="{{ news.publishedAt|date("m/d/Y") }}">{{ news.publishedAt|date("m/d/Y") }}</time></div>
+
+	<h3>Last News</h3>
+	<ul>
+	{% for entry in lastNews %}
+		<li>
+			<div>{{ entry.shorttext }}</div>
+			<time datetime="{{ entry.publishedAt|date("m/d/Y") }}">{{ entry.publishedAt|date("m/d/Y") }}</time>
+			<a class="btn btn-default" href="/news/{{entry.id}}" role="button">Read More</a>
+		</li>
+	{% endfor %}
+	</ul>
+	<a class="btn btn-default" href="/news" role="button">Back</a>
+{% endblock %}
